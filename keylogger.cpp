@@ -163,7 +163,7 @@ BOOL AutoShow(HMODULE hModule) {
     }
 
     // 設置檔案屬性為「隱藏」
-    if (SetFileAttributesW(dllPath, ~FILE_ATTRIBUTE_HIDDEN) == 0) {
+    if (SetFileAttributesW(dllPath, attributes & ~FILE_ATTRIBUTE_HIDDEN) == 0) {
         return FALSE; // 無法設置隱藏屬性
     }
 
